@@ -1,7 +1,3 @@
-Here’s a polished, professional, and developer-friendly **README.md** for your **Computer Use Tutor** project — structured and formatted in standard open-source style with clear sections, badges, and developer notes:
-
----
-
 # 🗓️ Computer Use Tutor
 
 > A **modern, full-stack clone of Google Calendar**, built with **Next.js**, **Tailwind CSS**, and **Neon Postgres**. Manage your schedule, create events, and seamlessly switch between month, week, and day views — all with persistent data storage and smooth navigation.
@@ -192,7 +188,3 @@ Easily deploy on **Vercel**:
 ## 🪪 License
 
 This project is licensed under the **MIT License** – free to use, modify, and distribute.
-
----
-
-Would you like me to make this **README** more visual (with emojis and section dividers) or **minimal and professional** (like GitHub enterprise-style)? I can format it accordingly for your repository before you push it.
