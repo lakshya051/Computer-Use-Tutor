@@ -1,125 +1,159 @@
-Computer Use Tutor
+:
 
-This is a functional clone of Google Calendar built with a modern, full-stack tech stack. It allows users to view their schedule, navigate between different views (Month, Week, Day), and create new events which are persisted in a serverless database.
+🗓️ Computer Use Tutor
+
+A modern, full-stack clone of Google Calendar, built with Next.js, Tailwind CSS, and Neon Postgres. Manage your schedule, create events, and seamlessly switch between month, week, and day views — all with persistent data storage and smooth navigation.
+
+
+
+
+
+
+
 
 ✨ Features
 
-Multiple Calendar Views: Seamlessly switch between Month, Week, and Day views to manage your schedule at different resolutions.
+✅ Multiple Calendar Views
+Switch effortlessly between Month, Week, and Day views to manage your schedule at different time scales.
 
-Create Events: Click on any time slot or use the "Create" button to open a popover and add new events to your calendar.
+🗓️ Create & Manage Events
+Click on any time slot or use the “Create” button to quickly add new events through a popover interface.
 
-Event Persistence: Events are saved to a Postgres database using Next.js Server Actions, making them available across sessions.
+💾 Persistent Storage
+All events are stored securely in a Neon Serverless Postgres database using Next.js Server Actions and Drizzle ORM — ensuring your data is always available.
 
-Dynamic Navigation: Easily navigate to "Today" or move to the previous/next month, week, or day.
+🧭 Dynamic Navigation
+Jump to Today, or move forward/backward through months, weeks, and days with smooth transitions.
 
-Global State Management: Uses Zustand for lightweight and efficient global state management for UI state (like selected date and view) and events.
+⚡ Global State Management
+Efficient and lightweight UI state control via Zustand, keeping the interface responsive and consistent.
 
-Mini Calendar: A sidebar calendar for quick date navigation.
+📅 Mini Calendar Sidebar
+A compact sidebar calendar for quick date selection and navigation.
 
 🛠️ Tech Stack
-
-This project uses a modern web development stack:
-
-Framework: Next.js (with React Server Components & Server Actions)
-
-Styling: Tailwind CSS
-
-UI Components: shadcn/ui
-
-Database: Neon (Serverless Postgres)
-
-ORM: Drizzle ORM
-
-State Management: Zustand
-
-Date/Time: Day.js
-
-Deployment: Vercel (implied by Neon/Next.js stack)
-
+Category	Technology
+Framework	Next.js (App Router, Server Actions)
+Styling	Tailwind CSS
+UI Components	shadcn/ui
+Database	Neon (Serverless Postgres)
+ORM	Drizzle ORM
+State Management	Zustand
+Date/Time	Day.js
+Deployment	Vercel
 🚀 Getting Started
 
-Follow these instructions to get a copy of the project up and running on your local machine.
+Follow these steps to set up the project locally.
 
-Prerequisites
+🧩 Prerequisites
+
+Before you begin, ensure you have the following:
 
 Node.js (v18.17.0 or later)
 
 npm or yarn
 
-A Neon account for the Postgres database.
+Neon account for database setup
 
-1. Clone the Repository
-
-git clone [https://github.com/your-username/computer-use-tutor.git](https://github.com/your-username/computer-use-tutor.git)
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/computer-use-tutor.git
 cd computer-use-tutor
 
-
-
-
-2. Install Dependencies
-
-Install the required packages using your preferred package manager:
-
+2️⃣ Install Dependencies
 npm install
 # or
 yarn install
 
+3️⃣ Configure Environment Variables
 
+Create a new project on Neon.tech
+, and get your Postgres connection string.
 
-
-3. Set Up Environment Variables
-
-This project connects to a Neon serverless Postgres database.
-
-Create a project on Neon and get your database connection string.
-
-Create a .env.local file in the root of the project.
-
-Add your database connection string to this file:
+Then create a .env.local file in the root directory:
 
 DATABASE_URL="postgresql://user:password@host.neon.tech/dbname?sslmode=require"
 
-
-
-
-4. Run Database Migrations
+4️⃣ Run Database Migrations
 
 Apply the database schema to your Neon database using Drizzle Kit:
 
 npm run migrate
 
 
+This command executes all SQL files in the db/migrations folder and sets up the required tables (like events).
 
-
-This will execute the SQL files in db/migrations and create the events table.
-
-5. Run the Development Server
-
-Start the Next.js development server:
-
+5️⃣ Start the Development Server
 npm run dev
 
 
+Now open your browser and navigate to
+👉 http://localhost:3000
 
+You should see your calendar app running!
 
-Open http://localhost:3000 with your browser to see the application.
+🧰 Available Scripts
+Command	Description
+npm run dev	Start the Next.js development server
+npm run build	Build the application for production
+npm run start	Run the production server
+npm run lint	Check for code style and linting issues
+npm run migrate	Apply database migrations
+npm run reset-db	Drop and recreate the events table (useful for testing)
+npm run test-query	Fetch and log all events from the database
+npm run add-test	Insert a test event for today’s date
+🧠 Folder Structure
+computer-use-tutor/
+│
+├── app/                  # Next.js App Router pages & layout
+├── components/           # Reusable UI components
+├── db/                   # Database configuration and migrations
+├── lib/                  # Utility functions (date handling, etc.)
+├── public/               # Static assets
+├── styles/               # Global CSS and Tailwind setup
+└── .env.local            # Environment variables (not committed)
 
-📂 Available Scripts
+🪄 Example Workflow
 
-This project comes with a few helpful scripts defined in package.json:
+Open the app → navigate to Month view.
 
-npm run dev: Starts the Next.js development server.
+Click any date/time slot → popover opens.
 
-npm run build: Builds the application for production.
+Enter event details → save event.
 
-npm run start: Starts a production server.
+The event is stored in your Postgres database and appears instantly on your calendar.
 
-npm run lint: Runs ESLint to check for code quality issues.
+☁️ Deployment
 
-npm run migrate: Runs Drizzle migrations to update your database schema.
+Easily deploy on Vercel:
 
-npm run reset-db: Drops and recreates the events table (useful for testing).
+Push your code to GitHub.
 
-npm run test-query: Fetches and logs all events from the database.
+Connect your repo to Vercel
+.
 
-npm run add-test: Adds a single "Test Event" to the database for today's date.
+Add your DATABASE_URL environment variable in project settings.
+
+Deploy 🚀
+
+💡 Future Enhancements
+
+🔔 Event reminders and notifications
+
+🧑‍🤝‍🧑 Shared calendars & collaboration
+
+📱 Responsive mobile-friendly interface improvements
+
+🌙 Dark mode toggle
+
+🕓 Time zone customization
+
+👨‍💻 Author
+
+Lakshya Varshney
+📧 [Your Email or Portfolio link here]
+🔗 GitHub
+ • LinkedIn
+
+🪪 License
+
+This project is licensed under the MIT License – free to use, modify, and distribute.
